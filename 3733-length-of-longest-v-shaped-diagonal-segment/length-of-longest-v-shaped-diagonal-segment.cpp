@@ -47,28 +47,28 @@ public:
                     const int ni = i - down_right[i][j];
                     const int nj = j - down_right[i][j];
                     if (0 <= ni && ni < n && 0 <= nj && nj < m && grid[ni][nj] == 1) {
-                        result = max(result, down_right[i][j] + up_right[i][j]);  // >
+                        result = max(result, down_right[i][j] + up_right[i][j]); 
                     }
                 }
                 if ((down_left[i][j] % 2 == 0 && x == 0) || (down_left[i][j] % 2 == 1 && x == 2)) {
                     const int ni = i - down_left[i][j];
                     const int nj = j + down_left[i][j];
                     if (0 <= ni && ni < n && 0 <= nj && nj < m && grid[ni][nj] == 1) {
-                        result = max(result, down_left[i][j] + down_right[i][j]);  // v
+                        result = max(result, down_left[i][j] + down_right[i][j]);  
                     }
                 }
                 if ((up_left[i][j] % 2 == 0 && x == 0) || (up_left[i][j] % 2 == 1 && x == 2)) {
                     const int ni = i + up_left[i][j];
                     const int nj = j + up_left[i][j];
                     if (0 <= ni && ni < n && 0 <= nj && nj < m && grid[ni][nj] == 1) {
-                        result = max(result, up_left[i][j] + down_left[i][j]);  // <
+                        result = max(result, up_left[i][j] + down_left[i][j]);  
                     }
                 }
                 if ((up_right[i][j] % 2 == 0 && x == 0) || (up_right[i][j] % 2 == 1 && x == 2)) {
                     const int ni = i + up_right[i][j];
                     const int nj = j - up_right[i][j];
                     if (0 <= ni && ni < n && 0 <= nj && nj < m && grid[ni][nj] == 1) {
-                        result = max(result, up_right[i][j] + up_left[i][j]);  // ^
+                        result = max(result, up_right[i][j] + up_left[i][j]);  
                     }
                 }
             }
